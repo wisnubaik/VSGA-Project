@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:text="'Login Berhasi.'"
+            android:text="'Login Berhasil.'"
             android:textColor="#FF0057"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />

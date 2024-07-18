@@ -20,7 +20,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etAlamat;
     EditText[] ets;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +52,6 @@ public class RegisterActivity extends AppCompatActivity {
                 etAsalSekolah,
                 etAlamat
         };
-        //event handler
 
         btSimpan.setOnClickListener(v -> {
             if (isValidation())
@@ -64,7 +62,6 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     boolean isValidation() {
-
         for (EditText et : ets)
             if (et.getText().toString().isEmpty())
                 return false;
@@ -73,7 +70,6 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     void simpanFileData() {
-
         String isiFile = "";
         for (EditText et : ets)
             isiFile += et.getText().toString() + ";";
@@ -88,6 +84,12 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         Toast.makeText(this, "Register Berhasil", Toast.LENGTH_SHORT).show();
-        onBackPressed();
+        onBackPressed(); // Kembali ke halaman sebelumnya
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed(); // Implementasi tombol back pada toolbar
+        return true;
     }
 }
